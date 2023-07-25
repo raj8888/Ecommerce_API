@@ -66,5 +66,28 @@ Development Implementation Log
    - Used `.populate()` to display only the category ID and name when viewing products of a specific category.
    - The route is public and does not require authentication.
 
+14. Cart Management:
+   - Created the `cart.model.js` file to define the Mongoose schema for the cart.
+   - Implemented cart-related operations in the `cart.controller.js` file, including adding products to the cart, viewing the cart, updating the quantity of a product in the cart, and removing items from the cart.
+   - Configured the `cart.route.js` file to define routes for cart management.
 
+15. Adding Products to Cart:
+   - Implemented the `/api/cart/add` route to allow users to add products to their cart.
+   - Checked if the product ID exists in the database before adding it to the cart.
+   - Verified that only authenticated users can add products to their cart.
+
+16. Viewing Cart:
+   - Implemented the `/api/cart/view` route to enable users to view their cart.
+   - Populated the product details (title and price) for each product in the cart to provide a better user experience.
+   - Restricted cart viewing to authenticated users.
+
+17. Updating Product Quantity in Cart:
+   - Implemented the `/api/cart/update` route to allow users to increase the quantity of a product in their cart.
+   - Checked if the product ID exists in the database and if the product is already present in the user's cart before updating the quantity.
+   - Validated that only authenticated users can update the product quantity in their cart.
+
+18. Removing Item from Cart:
+   - Implemented the `/api/cart/remove/:productId` route to enable users to remove items from their cart based on the product ID.
+   - Found the user's cart in the database and removed the item from the `products` array based on the provided product ID.
+   - Ensured that only authenticated users can remove items from their cart.
 
