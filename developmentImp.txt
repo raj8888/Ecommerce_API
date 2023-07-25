@@ -1,0 +1,33 @@
+Development Implementation Log
+=============================
+
+1. Database Selection:
+   - Chose MongoDB as the database for its flexibility and scalability.
+   - Opted for Mongoose as the ODM (Object-Data Mapping) library to simplify data access and validation.
+
+2. User Authentication:
+   - Implemented JWT-based authentication for user login and registration.
+   - Stored user information in the 'users' collection in MongoDB with a hashed password.
+   - Set the default user role to 'user' but added support for 'admin' role for future scalability.
+
+3. Error Handling:
+   - Implemented centralized error handling middleware to send meaningful error responses to clients.
+   - Created custom error classes to distinguish between different types of errors (e.g., validation errors, not found errors).
+
+4. User Registration:
+   - Validated user input during registration to ensure email and mobile uniqueness.
+   - Hashed the password using bcrypt before saving it to the database.
+   - Responded with appropriate error messages for duplicate email or mobile.
+
+5. User Login:
+   - Implemented login functionality with JWT token generation upon successful authentication.
+   - Responded with a JWT token for subsequent authenticated API requests.
+   - Added security considerations for token-based authentication.
+
+6. User Role Management (Future Enhancement):
+   - Included support for 'admin' role to allow for role-based access control in the future.
+   - Currently, the default role is set to 'user' for all new registrations.
+
+7. Rate Limiting (Future Enhancement):
+   - Rate limiting feature will be added to prevent potential API abuse and maintain server stability. The exact rate limit (e.g., 200 or 300 requests per hour) will be decided based on server capacity and security needs.
+
