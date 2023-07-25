@@ -28,6 +28,10 @@ app.use('/user', userRoutes);
 const categoryRoutes=require("./routes/category.route")
 app.use("/category",categoryRoutes)
 
+// Import Products routes
+const productRoutes=require("./routes/product.route")
+app.use("/product",productRoutes)
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server started on http://localhost:${port}`);
