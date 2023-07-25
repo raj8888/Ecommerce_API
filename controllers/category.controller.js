@@ -51,3 +51,14 @@ exports.getSingleCategory = async (req, res) => {
     res.status(500).json({ error: 'Internal server error.' });
   }
 };
+
+exports.getSimpleCategories = async (req, res) => {
+  try {
+    // Retrieve all categories with names and IDs only (no descriptions)
+    const categories = await Category.find({}, '_id name');
+
+    res.status(200).json({ categories });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal server error.' });
+  }
+};
