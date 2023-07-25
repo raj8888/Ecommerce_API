@@ -24,6 +24,10 @@ connectDB();
 const userRoutes = require('./routes/user.route');
 app.use('/user', userRoutes);
 
+// Import Category routes
+const categoryRoutes=require("./routes/category.route")
+app.use("/category",categoryRoutes)
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server started on http://localhost:${port}`);
