@@ -42,5 +42,29 @@ Development Implementation Log
    - Created `authorization.middleware.js` for authorization based on user roles.
    - Integrated authentication middleware into protected routes, such as category creation, to ensure that only authenticated users with the 'admin' role can access them.
 
+10.Product Management:
+   - Created the `product.model.js` file to define the Mongoose schema for products.
+   - Implemented CRUD operations for products in the `product.controller.js` file.
+   - Configured the `product.routes.js` file to define routes for product management.
+
+11. Product Creation:
+   - Restricted product creation to admin users only.
+   - Added authentication middleware to ensure only authenticated users can create products.
+   - Implemented the `/api/product/create` route for creating new products.
+   - Checked for admin role in the authentication middleware before allowing product creation.
+   - Verified the existence of the category ID during product creation and sent appropriate responses if the category ID was invalid or not found.
+
+12.  Product Retrieval:
+   - Implemented the `/api/product/all` route to retrieve all products.
+   - Implemented the `/api/product/:id` route to fetch a single product by ID.
+   - Used `.populate()` to display only the category ID and name when fetching products.
+   - Ensured that viewing products or a single product did not require authentication.
+
+13. Products of a Single Category:
+   - Implemented the `/api/product/category/:categoryId` route to fetch all products belonging to a single category.
+   - Validated the existence of the category ID before retrieving products.
+   - Used `.populate()` to display only the category ID and name when viewing products of a specific category.
+   - The route is public and does not require authentication.
+
 
 
