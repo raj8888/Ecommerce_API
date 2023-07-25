@@ -23,6 +23,7 @@ const authMiddleware = async (req, res, next) => {
 
     // Attach the user object to the request for further use in the protected route
     req.user = user;
+    req.role = user.role
 
     next(); // Move to the next middleware or route handler
   } catch (error) {

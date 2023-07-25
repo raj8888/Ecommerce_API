@@ -31,9 +31,10 @@ Development Implementation Log
 7. Rate Limiting (Future Enhancement):
    - Rate limiting feature will be added to prevent potential API abuse and maintain server stability. The exact rate limit (e.g., 200 or 300 requests per hour) will be decided based on server capacity and security needs.
 
-8. Authentication Middleware:
+8. Authentication and Authorization Middleware:
    - Created `auth.middleware.js` to handle JWT token verification and user authentication.
    - The middleware extracts the token from the "Authorization" header in the format "bearer ${token}".
    - Verified the token using the SECRET_KEY and attached the user object to the request for protected route access.
+   - Create `authorization.middlware.js` for if there is route regarding to creating something then only admin have access to this routes.
 
 
