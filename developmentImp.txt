@@ -91,3 +91,14 @@ Development Implementation Log
    - Found the user's cart in the database and removed the item from the `products` array based on the provided product ID.
    - Ensured that only authenticated users can remove items from their cart.
 
+19. Order Management:
+   - Created the `order.model.js` file to define the Mongoose schema for orders, including user reference and product details in the order.
+   - Implemented the `/api/order/create` route to allow users to create an order by placing products from their cart into the order.
+   - Calculated the total price of the order based on the products in the cart and saved the order to the database.
+   - Handled scenarios where the user attempts to create an order with an empty cart or an order with products that are no longer available.
+
+20. Order History and Order Details:
+   - Implemented the `/api/order/history` route to allow users to view their order history.
+   - Created the `/api/order/details/:id` route to enable users to view the details of a specific order by its ID.
+   - Fetched order history and order details from the database and returned them in the response.
+   - Ensured that only authenticated users can access their order history and view order details.
