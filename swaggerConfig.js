@@ -5,9 +5,9 @@ const options = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'My API Documentation',
+      title: 'E-commerce API Documentation',
       version: '1.0.0',
-      description: 'Documentation for My API',
+      description: 'Documentation for E-commerce API',
     },
     servers: [
       {

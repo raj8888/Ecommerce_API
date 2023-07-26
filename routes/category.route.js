@@ -154,4 +154,16 @@ const { authorization } = require('../middlewares/authorization.middleware');
  *         description: Internal server error.
  */
 
+// Protected route: Create a new category (Only admin access)
+router.post('/create', authMiddleware, authorization(['admin']), categoryController.createCategory);
+
+// Public route: Get all categories with full details
+router.get('/all/description', categoryController.getAllCategories);
+
+// Public route: Get a single category by ID
+router.get('/:id', categoryController.getSingleCategory);
+
+// Public route: Get all categories with names and IDs only (no descriptions)
+router.get('/all/names', categoryController.getSimpleCategories);
+
 module.exports = router;
