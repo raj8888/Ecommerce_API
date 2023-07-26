@@ -262,6 +262,10 @@ To run this project, you will need to add the following environment variables to
 
 - This project is an e-commerce API that provides essential features for managing users, categories, products, carts, and orders. It is designed with security, scalability, and ease of use in mind. The Swagger documentation ensures that API endpoints are well-documented and easy to explore.
 
+## Backend Deployed Demo
+
+[https://rose-real-piranha.cyclic.app](
+https://rose-real-piranha.cyclic.app)
 
 ## Author
 
