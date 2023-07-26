@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const rateLimit = require('express-rate-limit');
 const connectDB = require('./config/db');
+const { specs, swaggerUi } = require('./swaggerConfig');
 dotenv.config();
 
 const app = express();
@@ -39,6 +40,9 @@ app.use("/cart",cartRoutes)
 // Import Product routes
 const orderRoutes=require("./routes/order.route")
 app.use("/order",orderRoutes)
+
+// Serve Swagger documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // Start the server
 app.listen(port, () => {
