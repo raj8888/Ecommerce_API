@@ -13,6 +13,27 @@ const { authorization } = require('../middlewares/authorization.middleware');
 
 /**
  * @swagger
+ * components:
+ *   schemas:
+ *     Category:
+ *       type: object
+ *       properties:
+ *         _id:
+ *           type: string
+ *           description: The ID of the category.
+ *           example: 6123456789abcdef01234567
+ *         name:
+ *           type: string
+ *           description: The name of the category.
+ *           example: Category A
+ *         description:
+ *           type: string
+ *           description: The description of the category.
+ *           example: This is Category A
+ */
+
+/**
+ * @swagger
  * /category/create:
  *   post:
  *     summary: Create a new category(Only admin have access)
