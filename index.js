@@ -36,6 +36,10 @@ app.use("/product",productRoutes)
 const cartRoutes=require("./routes/cart.route")
 app.use("/cart",cartRoutes)
 
+// Import Product routes
+const orderRoutes=require("./routes/order.route")
+app.use("/order",orderRoutes)
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server started on http://localhost:${port}`);
